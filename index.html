@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>抽籤器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+        }
+        
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>抽籤器</h1>
+    <p>點擊按鈕進行抽籤!</p>
+    <button onclick="drawLottery()">抽籤</button>
+    <div id="result"></div>
+
+    <script>
+        function drawLottery() {
+            var participants = ["賴清德", "侯友宜", "柯文哲", "郭台銘", "馬英九"];
+            var winner = participants[Math.floor(Math.random() * participants.length)];
+            var participants2 = participants.filter(function(participant) {return participant !== winner;});
+            var winner2 = participants2[Math.floor(Math.random() * participants2.length)];
+            document.getElementById("result").textContent = "請尋找 " + winner + " 以及 " + winner2 + " 一起拍照!";
+        }
+    </script>
+</body>
+</html>
