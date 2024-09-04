@@ -42,7 +42,7 @@
             var winner = participants[Math.floor(Math.random() * participants.length)];
             var participants2 = participants.filter(function(participant) {return participant !== winner;});
             var winner2 = participants2[Math.floor(Math.random() * participants2.length)];
-            document.getElementById("result").textContent = "請尋找<br>" + winner + "<br>以及<br>" + winner2 + "<br>一起拍照!";
+            document.getElementById("result").innerHTML = "請尋找<br>" + winner + "<br>以及<br>" + winner2 + "<br>一起拍照!";
         }
     </script>
 </body>
